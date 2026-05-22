@@ -260,7 +260,7 @@ Deno.serve(async (req: Request) => {
       },
       body: JSON.stringify({
         from: "CloutKart Inquiries <inquiry@clout-kart.com>",
-        to: ["adhiraj@clout-kart.com", "rounak@clout-kart.com", "inquiry@clout-kart.com"],
+        to: ["adhiraj@clout-kart.com", "rounak@clout-kart.com", "shivam@clout-kart.com"],
         subject: `New Inquiry from ${fullName}${company ? ` (${company})` : ""}`,
         text: plainText,
         html: buildNotificationEmail(fullName, company || "", email, website || "", message),
