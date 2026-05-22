@@ -58,7 +58,8 @@ export default function ScrollStory() {
       const rect = outerRef.current.getBoundingClientRect();
       const scrollable = outerRef.current.offsetHeight - window.innerHeight;
       if (scrollable <= 0) return;
-      const scrolled = -rect.top;
+      const earlyTrigger = window.innerHeight * 0.3;
+      const scrolled = -rect.top + earlyTrigger;
       const pct = Math.max(0, Math.min(1, scrolled / scrollable));
       setProgress(pct);
 
