@@ -87,7 +87,7 @@ export default function ScrollStory() {
           style={{ background: 'radial-gradient(circle, #06B6D4, transparent)' }} />
       </div>
 
-      <div ref={outerRef} className="h-[130vh] md:h-[160vh]">
+      <div ref={outerRef} className="h-[108vh] md:h-[115vh]">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div className={`text-center mb-5 md:mb-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="inline-block glass border border-[#2563EB]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#60a5fa] mb-3 md:mb-4">
