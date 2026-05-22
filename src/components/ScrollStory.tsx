@@ -88,7 +88,7 @@ export default function ScrollStory() {
       </div>
 
       <div ref={outerRef} className="h-[150vh] md:h-[180vh]">
-        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        <div className="sticky top-0 h-screen flex flex-col justify-start md:justify-center pt-20 md:pt-0 overflow-hidden">
           <div className={`text-center mb-5 md:mb-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="inline-block glass border border-[#2563EB]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#60a5fa] mb-3 md:mb-4">
               The CloutKart Story
@@ -148,13 +148,13 @@ export default function ScrollStory() {
             </div>
 
             {/* Mobile: big active card + dots */}
-            <div className="md:hidden mb-6">
+            <div className="md:hidden mb-4">
               <div
-                className="relative rounded-2xl p-0.5 mb-4 transition-all duration-500"
+                className="relative rounded-2xl p-0.5 mb-3 transition-all duration-500"
                 style={{ background: `linear-gradient(135deg, ${activeP.accent}80, ${activeP.accent}20)` }}
               >
                 <div
-                  className="glass-card rounded-xl p-6"
+                  className="glass-card rounded-xl p-5"
                   style={{ borderColor: activeP.accent, borderWidth: '1px', borderStyle: 'solid' }}
                 >
                   <div className="flex items-center gap-3 mb-4">
