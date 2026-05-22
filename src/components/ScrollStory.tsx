@@ -64,10 +64,10 @@ export default function ScrollStory() {
       const pct = Math.max(0, Math.min(1, scrolled / scrollable));
       setProgress(pct);
 
-      // 85% of scroll for the 4 phases, last 15% for final statement
-      if (pct < 0.85) {
+      // 65% of scroll for the 4 phases, last 35% for final statement
+      if (pct < 0.65) {
         setShowFinal(false);
-        const phasePct = pct / 0.85;
+        const phasePct = pct / 0.65;
         setActivePhase(Math.min(phases.length - 1, Math.floor(phasePct * phases.length)));
       } else {
         setShowFinal(true);
@@ -197,7 +197,7 @@ export default function ScrollStory() {
                 <div
                   className="h-full rounded-full transition-all duration-150"
                   style={{
-                    width: `${Math.min(progress / 0.85, 1) * 100}%`,
+                    width: `${Math.min(progress / 0.65, 1) * 100}%`,
                     background: 'linear-gradient(90deg, #8B2FE0, #2563EB, #06B6D4)',
                     boxShadow: '0 0 8px rgba(139,47,224,0.6)',
                   }}
