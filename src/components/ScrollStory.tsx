@@ -205,7 +205,7 @@ export default function ScrollStory() {
 
       {/* Final statement — overlaps sticky block via negative margin */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-32" style={{ marginTop: '-40vh' }}>
-        <div className="text-center glass-card rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/[0.06] relative overflow-hidden">
+        <div className="text-center glass-card rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/[0.06] relative overflow-hidden" style={{ background: 'rgba(8,12,20,0.88)' }}>
           <div className="absolute inset-0 bg-gradient-to-br from-[#8B2FE0]/5 via-transparent to-[#06B6D4]/5" />
           <div className="relative z-10">
             <p className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-3 sm:mb-4 leading-tight">

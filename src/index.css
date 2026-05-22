@@ -283,9 +283,16 @@ html, body {
     -webkit-backdrop-filter: blur(20px);
   }
 
+  /* Stronger opaque background on mobile so orb glow doesn't bleed through */
   .glass-card {
+    background: rgba(8, 12, 20, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* Gradient text needs a dark backing on mobile to stay readable */
+  .text-gradient {
+    filter: drop-shadow(0 1px 8px rgba(0,0,0,0.8));
   }
 
   /* Reduce hover-lift animation on touch devices */
