@@ -80,7 +80,7 @@ export default function ScrollStory() {
   const activeP = phases[activePhase];
 
   return (
-    <section id="story" className="relative bg-[#080C14] py-0">
+    <section id="story" className="relative bg-[#080C14]">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="orb w-[600px] h-[600px] -left-64 top-1/3 opacity-10"
           style={{ background: 'radial-gradient(circle, #2563EB, transparent)' }} />
@@ -88,7 +88,7 @@ export default function ScrollStory() {
           style={{ background: 'radial-gradient(circle, #06B6D4, transparent)' }} />
       </div>
 
-      <div ref={outerRef} className="h-[200vh] md:h-[220vh]">
+      <div ref={outerRef} className="h-[250vh]">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           {/* Phase cards view */}
           <div
