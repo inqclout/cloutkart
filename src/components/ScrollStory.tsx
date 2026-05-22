@@ -185,19 +185,29 @@ export default function ScrollStory() {
             </div>
 
             {/* Progress bar */}
-            <div className="w-full h-px bg-white/10 rounded-full overflow-hidden">
+            <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
               <div
                 className="h-full rounded-full transition-all duration-150"
                 style={{
                   width: `${progress * 100}%`,
                   background: 'linear-gradient(90deg, #8B2FE0, #2563EB, #06B6D4)',
+                  boxShadow: '0 0 8px rgba(139,47,224,0.6)',
                 }}
               />
             </div>
-            <div className="flex justify-between mt-2 text-xs text-white/20 font-medium">
-              <span>Start</span>
-              <span style={{ color: activeP.accent }}>Phase {activeP.phase} / 05</span>
-              <span>Launch</span>
+            <div className="flex justify-between mt-2.5 text-xs font-black">
+              <span className="text-white/40">Start</span>
+              <span
+                className="tracking-widest uppercase"
+                style={{
+                  color: '#fff',
+                  textShadow: '0 0 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,1)',
+                  WebkitTextStroke: '0px',
+                }}
+              >
+                Phase {activeP.phase} / 05
+              </span>
+              <span className="text-white/40">Launch</span>
             </div>
           </div>
         </div>
