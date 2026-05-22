@@ -97,7 +97,7 @@ export default function Contact() {
   const labelClass = "block text-xs font-semibold text-white/50 mb-2 uppercase tracking-wider";
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-32 bg-[#080C14] overflow-hidden" id="contact">
+    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#080C14] overflow-hidden" id="contact">
       <div className="orb w-[700px] h-[700px] left-1/2 -translate-x-1/2 -top-32 opacity-10"
         style={{ background: 'radial-gradient(circle, #8B2FE0, transparent)' }} />
       <div className="orb w-[500px] h-[500px] -right-32 bottom-0 opacity-8"
@@ -108,12 +108,12 @@ export default function Contact() {
           <div className="reveal inline-block glass border border-[#8B2FE0]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#a78bfa] mb-6">
             Get Started
           </div>
-          <h2 className="reveal delay-100 text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-tight mb-4">
+          <h2 className="reveal delay-100 text-2xl sm:text-4xl lg:text-6xl font-black text-white leading-tight mb-3 sm:mb-4">
             Let's Build Your
             <br />
             <span className="text-gradient">Winning Message</span>
           </h2>
-          <p className="reveal delay-200 text-white/40 text-base md:text-lg max-w-xl mx-auto">
+          <p className="reveal delay-200 text-white/40 text-sm md:text-lg max-w-xl mx-auto">
             Tell us about your brand. We'll reach out within 24 hours to start building.
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function Contact() {
 
           <form
             onSubmit={handleSubmit}
-            className="relative glass-card rounded-3xl p-6 sm:p-8 lg:p-12 overflow-hidden"
+            className="relative glass-card rounded-3xl p-5 sm:p-8 lg:p-12 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#8B2FE0]/5 via-transparent to-[#06B6D4]/5 pointer-events-none" />
 

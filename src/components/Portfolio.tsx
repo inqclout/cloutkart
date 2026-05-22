@@ -67,21 +67,21 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-32 bg-[#080C14] overflow-hidden" id="portfolio">
+    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#080C14] overflow-hidden" id="portfolio">
       <div className="orb w-[600px] h-[600px] -right-32 top-1/4 opacity-8"
         style={{ background: 'radial-gradient(circle, #2563EB, transparent)' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <div className="reveal inline-block glass border border-[#2563EB]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#60a5fa] mb-6">
             Our Work
           </div>
-          <h2 className="reveal delay-100 text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-tight mb-4">
+          <h2 className="reveal delay-100 text-2xl sm:text-4xl lg:text-6xl font-black text-white leading-tight mb-3 sm:mb-4">
             Creatives That
             <br />
             <span className="text-gradient">Actually Convert</span>
           </h2>
-          <p className="reveal delay-200 text-white/40 text-base sm:text-lg max-w-xl mx-auto">
+          <p className="reveal delay-200 text-white/40 text-sm sm:text-lg max-w-xl mx-auto">
             A showcase of premium ad creatives, campaign visuals, and performance-focused content.
           </p>
         </div>

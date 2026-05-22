@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#080C14]"
+      className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#080C14]"
       id="hero"
     >
       {/* Mouse glow — desktop only */}
@@ -49,7 +49,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-16 sm:pb-20 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-10 sm:pb-20 w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left: Text content */}
           <div className="text-left">
@@ -59,7 +59,7 @@ export default function Hero() {
               AI Creatives That Drive Results
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-5 sm:mb-6 animate-fade-up delay-100">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-4 sm:mb-6 animate-fade-up delay-100">
               <span className="text-white">AI-Powered Ads</span>
               <br />
               <span className="text-gradient">That Actually</span>
@@ -67,7 +67,7 @@ export default function Hero() {
               <span className="text-white">Convert.</span>
             </h1>
 
-            <p className="text-white/50 text-base sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-xl animate-fade-up delay-200">
+            <p className="text-white/50 text-sm sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-10 max-w-xl animate-fade-up delay-200">
               CloutKart helps brands create high-converting creative using AI, strategic messaging, and direct-response thinking.
             </p>
 
@@ -91,7 +91,7 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-white/[0.06] animate-fade-up delay-400">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-14 pt-6 sm:pt-10 border-t border-white/[0.06] animate-fade-up delay-400">
               {[
                 { value: '500+', label: 'Creatives Delivered' },
                 { value: '10x', label: 'Average ROAS Boost' },

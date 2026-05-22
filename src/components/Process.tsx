@@ -67,23 +67,23 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-32 bg-[#080C14] overflow-hidden" id="process">
+    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#080C14] overflow-hidden" id="process">
       <div className="orb w-[500px] h-[500px] -left-32 top-1/2 opacity-10"
         style={{ background: 'radial-gradient(circle, #8B2FE0, transparent)' }} />
       <div className="orb w-[400px] h-[400px] -right-20 bottom-1/4 opacity-8"
         style={{ background: 'radial-gradient(circle, #06B6D4, transparent)' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14 md:mb-20">
+        <div className="text-center mb-10 md:mb-20">
           <div className="reveal inline-block glass border border-[#8B2FE0]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#a78bfa] mb-6">
             How We Work
           </div>
-          <h2 className="reveal delay-100 text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-tight mb-4">
+          <h2 className="reveal delay-100 text-2xl sm:text-4xl lg:text-6xl font-black text-white leading-tight mb-3 sm:mb-4">
             The Creative
             <br />
             <span className="text-gradient">Engineering Process</span>
           </h2>
-          <p className="reveal delay-200 text-white/40 text-base sm:text-lg max-w-xl mx-auto">
+          <p className="reveal delay-200 text-white/40 text-sm sm:text-lg max-w-xl mx-auto">
             Every CloutKart project follows a proven six-step process that consistently produces high-converting creative.
           </p>
         </div>
@@ -92,11 +92,11 @@ export default function Process() {
           {/* Connector line — desktop only */}
           <div className="hidden lg:block absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             {steps.map((step, i) => (
               <div
                 key={step.num}
-                className={`reveal delay-${(i + 1) * 100} glass-card rounded-2xl p-6 sm:p-8 group hover-lift relative overflow-hidden`}
+                className={`reveal delay-${(i + 1) * 100} glass-card rounded-2xl p-4 sm:p-8 group hover-lift relative overflow-hidden`}
                 style={{ border: `1px solid rgba(255,255,255,0.06)` }}
               >
                 <div
@@ -104,23 +104,23 @@ export default function Process() {
                   style={{ background: `radial-gradient(circle at 20% 20%, ${step.color}10, transparent 70%)` }}
                 />
 
-                <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+                <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-6">
                   <div
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 flex-shrink-0"
+                    className="w-8 h-8 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 flex-shrink-0"
                     style={{ background: `${step.color}20`, border: `1px solid ${step.color}40` }}
                   >
-                    <step.icon size={18} style={{ color: step.color }} />
+                    <step.icon size={16} style={{ color: step.color }} />
                   </div>
                   <span
-                    className="text-3xl sm:text-4xl font-black"
+                    className="text-2xl sm:text-4xl font-black"
                     style={{ color: `${step.color}30` }}
                   >
                     {step.num}
                   </span>
                 </div>
 
-                <h3 className="relative z-10 text-base sm:text-lg font-bold text-white mb-2 sm:mb-3">{step.title}</h3>
-                <p className="relative z-10 text-xs sm:text-sm text-white/45 leading-relaxed">{step.desc}</p>
+                <h3 className="relative z-10 text-xs sm:text-lg font-bold text-white mb-1 sm:mb-3">{step.title}</h3>
+                <p className="relative z-10 text-[11px] sm:text-sm text-white/45 leading-relaxed hidden sm:block">{step.desc}</p>
 
                 <div
                   className="absolute top-5 right-5 w-2 h-2 rounded-full animate-pulse"

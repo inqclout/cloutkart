@@ -29,7 +29,7 @@ export default function About() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-32 bg-[#080C14] overflow-hidden" id="about">
+    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#080C14] overflow-hidden" id="about">
       <div className="orb w-[500px] h-[500px] -right-32 top-1/2 opacity-10"
         style={{ background: 'radial-gradient(circle, #8B2FE0, transparent)' }} />
 
@@ -40,14 +40,14 @@ export default function About() {
             <div className="reveal inline-block glass border border-[#8B2FE0]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#a78bfa] mb-6">
               What is CloutKart?
             </div>
-            <h2 className="reveal delay-100 text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+            <h2 className="reveal delay-100 text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 sm:mb-6">
               A Creative Advertising Studio Built for{' '}
               <span className="text-gradient">Modern Brands</span>
             </h2>
-            <p className="reveal delay-200 text-white/50 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+            <p className="reveal delay-200 text-white/50 text-sm sm:text-lg leading-relaxed mb-4 sm:mb-8">
               CloutKart is a creative advertising studio that helps brands sell more with scroll-stopping ads, strategic messaging, AI-powered design, and high-conversion creative systems.
             </p>
-            <p className="reveal delay-300 text-white/40 text-sm sm:text-base leading-relaxed mb-8 sm:mb-10">
+            <p className="reveal delay-300 text-white/40 text-sm sm:text-base leading-relaxed mb-6 sm:mb-10">
               We don't just make ads look good — we engineer them to convert. Every creative is built on a winning message, tested across formats, and delivered production-ready.
             </p>
             <div className="reveal delay-400">

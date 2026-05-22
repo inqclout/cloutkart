@@ -35,30 +35,30 @@ export default function Services() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-32 bg-[#080C14] overflow-hidden" id="services">
+    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#080C14] overflow-hidden" id="services">
       <div className="orb w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-0 opacity-8"
         style={{ background: 'radial-gradient(circle, #2563EB, transparent)' }} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 md:mb-16">
           <div className="reveal inline-block glass border border-[#2563EB]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#60a5fa] mb-6">
             What We Create
           </div>
-          <h2 className="reveal delay-100 text-4xl lg:text-6xl font-black text-white leading-tight mb-4">
+          <h2 className="reveal delay-100 text-2xl sm:text-4xl lg:text-6xl font-black text-white leading-tight mb-3 sm:mb-4">
             Every Format.
             <br />
             <span className="text-gradient">One Winning Message.</span>
           </h2>
-          <p className="reveal delay-200 text-white/40 text-lg max-w-xl mx-auto">
+          <p className="reveal delay-200 text-white/40 text-sm sm:text-lg max-w-xl mx-auto">
             We translate your core message into every format that converts — across every platform that matters.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`reveal-scale delay-${Math.min((i + 1) * 80, 800)} glass-card rounded-2xl p-6 group hover-lift relative overflow-hidden cursor-default`}
+              className={`reveal-scale delay-${Math.min((i + 1) * 80, 800)} glass-card rounded-2xl p-4 sm:p-6 group hover-lift relative overflow-hidden cursor-default`}
               style={{ border: `1px solid rgba(255,255,255,0.06)` }}
             >
               {/* Hover glow */}
@@ -81,13 +81,13 @@ export default function Services() {
               />
 
               <div
-                className="relative z-10 w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+                className="relative z-10 w-9 h-9 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-110"
                 style={{ background: `${service.color}20`, border: `1px solid ${service.color}30` }}
               >
                 <service.icon size={20} style={{ color: service.color }} />
               </div>
-              <h3 className="relative z-10 text-sm font-bold text-white mb-2 leading-tight">{service.title}</h3>
-              <p className="relative z-10 text-xs text-white/40 leading-relaxed">{service.desc}</p>
+              <h3 className="relative z-10 text-xs sm:text-sm font-bold text-white mb-1 sm:mb-2 leading-tight">{service.title}</h3>
+              <p className="relative z-10 text-[11px] sm:text-xs text-white/40 leading-relaxed hidden sm:block">{service.desc}</p>
             </div>
           ))}
         </div>

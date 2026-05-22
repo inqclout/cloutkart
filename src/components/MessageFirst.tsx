@@ -43,36 +43,36 @@ export default function MessageFirst() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-32 overflow-hidden bg-[#080C14]" id="message">
+    <section ref={sectionRef} className="relative py-14 md:py-32 overflow-hidden bg-[#080C14]" id="message">
       <div className="orb w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10"
         style={{ background: 'radial-gradient(circle, #8B2FE0, transparent)' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Big statement */}
-        <div className="text-center mb-14 md:mb-20">
+        <div className="text-center mb-10 md:mb-20">
           <div className="reveal inline-block glass border border-[#8B2FE0]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#a78bfa] mb-6">
             Our Philosophy
           </div>
 
           <div className="reveal delay-100">
-            <h2 className="text-4xl sm:text-5xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-2">
+            <h2 className="text-3xl sm:text-5xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-1 sm:mb-2">
               <span className="text-white/20">It's Not About</span>
             </h2>
-            <h2 className="text-4xl sm:text-5xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-2">
+            <h2 className="text-3xl sm:text-5xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-1 sm:mb-2">
               <span className="text-white">The Ad.</span>
             </h2>
-            <h2 className="text-4xl sm:text-5xl lg:text-8xl font-black tracking-tight leading-[1.05]">
+            <h2 className="text-3xl sm:text-5xl lg:text-8xl font-black tracking-tight leading-[1.05]">
               <span className="text-gradient">It's About The Message.</span>
             </h2>
           </div>
         </div>
 
         {/* Big glass card */}
-        <div className="reveal delay-200 glass-card rounded-3xl p-8 sm:p-10 lg:p-16 border border-white/[0.06] mb-10 md:mb-16 relative overflow-hidden">
+        <div className="reveal delay-200 glass-card rounded-3xl p-6 sm:p-10 lg:p-16 border border-white/[0.06] mb-8 md:mb-16 relative overflow-hidden">
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-40 bg-gradient-to-b from-[#8B2FE0]/20 to-transparent blur-3xl pointer-events-none" />
 
           <div className="relative z-10">
-            <p className="text-xl sm:text-2xl lg:text-4xl font-semibold text-white leading-relaxed text-center max-w-4xl mx-auto">
+            <p className="text-lg sm:text-2xl lg:text-4xl font-semibold text-white leading-relaxed text-center max-w-4xl mx-auto">
               "A winning message can be translated into{' '}
               <span className="text-gradient">anything.</span>"
             </p>

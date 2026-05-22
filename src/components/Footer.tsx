@@ -34,9 +34,9 @@ export default function Footer() {
       <div className="orb w-[600px] h-[600px] left-1/2 -translate-x-1/2 -bottom-64 opacity-8"
         style={{ background: 'radial-gradient(circle, #8B2FE0, transparent)' }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-8 sm:pb-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-6 sm:pb-10">
         {/* Top row */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 sm:gap-12 mb-12 sm:mb-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-10 sm:mb-14">
           {/* Brand col */}
           <div className="sm:col-span-2 lg:col-span-2">
             <img
