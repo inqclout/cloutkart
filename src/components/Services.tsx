@@ -35,7 +35,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#080C14] overflow-hidden" id="services">
+    <section ref={sectionRef} className="relative py-10 md:py-16 bg-[#080C14] overflow-hidden" id="services">
       <div className="orb w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-0 opacity-8"
         style={{ background: 'radial-gradient(circle, #2563EB, transparent)' }} />
 

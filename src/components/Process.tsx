@@ -67,7 +67,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#080C14] overflow-hidden" id="process">
+    <section ref={sectionRef} className="relative py-10 md:py-16 bg-[#080C14] overflow-hidden" id="process">
       <div className="orb w-[500px] h-[500px] -left-32 top-1/2 opacity-10"
         style={{ background: 'radial-gradient(circle, #8B2FE0, transparent)' }} />
       <div className="orb w-[400px] h-[400px] -right-20 bottom-1/4 opacity-8"
