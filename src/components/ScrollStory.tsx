@@ -223,7 +223,7 @@ export default function ScrollStory() {
             className="absolute inset-0 flex items-center justify-center px-4 transition-all duration-600"
             style={{ opacity: showFinal ? 1 : 0, transform: showFinal ? 'scale(1) translateY(0)' : 'scale(0.9) translateY(30px)', pointerEvents: showFinal ? 'auto' : 'none' }}
           >
-            <div className="text-center glass-card rounded-2xl p-5 sm:p-8 lg:p-10 border border-white/[0.06] relative overflow-hidden max-w-3xl w-full" style={{ background: 'rgba(8,12,20,0.88)' }}>
+            <div className="text-center glass-card rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/[0.06] relative overflow-hidden max-w-3xl w-full" style={{ background: 'rgba(8,12,20,0.88)' }}>
               <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB]/5 via-transparent to-[#06B6D4]/5" />
               <div className="relative z-10">
                 <p className="text-lg sm:text-2xl lg:text-4xl font-black text-white mb-1 sm:mb-2 leading-tight">
