@@ -132,7 +132,7 @@ function buildNotificationEmail(fullName: string, company: string, email: string
               <p style="margin: 0 0 6px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 800; color: #ffffff;">CloutKart</p>
               <p style="margin: 0 0 10px 0; font-family: Arial, sans-serif; font-size: 11px; color: #3b5280; letter-spacing: 0.08em; text-transform: uppercase;">AI-Powered Creative Advertising</p>
               <p style="margin: 0; font-family: Arial, sans-serif; font-size: 12px; color: #2a4070;">
-                <a href="mailto:shivam@clout-kart.com" style="color: #2a6090; text-decoration: none;">shivam@clout-kart.com</a>
+                <a href="mailto:inquiry@clout-kart.com" style="color: #2a6090; text-decoration: none;">inquiry@clout-kart.com</a>
               </p>
             </td>
           </tr>
@@ -210,7 +210,7 @@ function buildAutoReplyEmail(fullName: string): string {
             <td style="padding: 28px 40px 32px 40px;">
               <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 14px; color: #c8d8f0; font-weight: 600;">— The CloutKart Team</p>
               <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #3b5280;">
-                <a href="mailto:shivam@clout-kart.com" style="color: #22d3ee; text-decoration: none;">shivam@clout-kart.com</a>
+                <a href="mailto:inquiry@clout-kart.com" style="color: #22d3ee; text-decoration: none;">inquiry@clout-kart.com</a>
               </p>
             </td>
           </tr>
@@ -251,7 +251,7 @@ Deno.serve(async (req: Request) => {
 
     const plainText = `New CloutKart Inquiry\n\nFull Name: ${fullName}\nCompany: ${company || "Not provided"}\nEmail: ${email}\nWebsite: ${website || "Not provided"}\n\nMessage:\n${message}`;
 
-    // Notification to CloutKart
+    // Notification to CloutKart team
     await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -259,8 +259,8 @@ Deno.serve(async (req: Request) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "CloutKart <onboarding@resend.dev>",
-        to: ["shivam@clout-kart.com"],
+        from: "CloutKart Inquiries <inquiry@clout-kart.com>",
+        to: ["adhiraj@clout-kart.com", "rounak@clout-kart.com", "inquiry@clout-kart.com"],
         subject: `New Inquiry from ${fullName}${company ? ` (${company})` : ""}`,
         text: plainText,
         html: buildNotificationEmail(fullName, company || "", email, website || "", message),
@@ -275,10 +275,11 @@ Deno.serve(async (req: Request) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "CloutKart <onboarding@resend.dev>",
+        from: "CloutKart <inquiry@clout-kart.com>",
         to: [email],
+        reply_to: "inquiry@clout-kart.com",
         subject: "We received your CloutKart inquiry",
-        text: `Hi ${fullName},\n\nThanks for contacting CloutKart. We've received your inquiry and will get back to you within 24 hours.\n\n— The CloutKart Team\nshivam@clout-kart.com`,
+        text: `Hi ${fullName},\n\nThanks for contacting CloutKart. We've received your inquiry and will get back to you within 24 hours.\n\n— The CloutKart Team\ninquiry@clout-kart.com`,
         html: buildAutoReplyEmail(fullName),
       }),
     });

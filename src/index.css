@@ -181,6 +181,16 @@
   filter: blur(80px);
   pointer-events: none;
   animation: orb-drift 15s ease-in-out infinite;
+  translate: 0 calc(var(--scroll-offset, 0) * var(--orb-speed, 0.15) * 1px);
+  will-change: translate;
+}
+
+.orb:nth-child(odd) {
+  --orb-speed: -0.1;
+}
+
+.orb:nth-child(even) {
+  --orb-speed: 0.15;
 }
 
 .noise-overlay {

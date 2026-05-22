@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import LoadingScreen from './components/LoadingScreen';
 import CursorGlow from './components/CursorGlow';
 import Navbar from './components/Navbar';
@@ -13,6 +14,21 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          document.documentElement.style.setProperty('--scroll-offset', String(window.scrollY));
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
       <LoadingScreen />
