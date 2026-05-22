@@ -240,8 +240,8 @@ export default function Contact() {
 
         <p className="reveal delay-500 text-center text-white/30 text-sm mt-6">
           Prefer email?{' '}
-          <a href="mailto:shivam@clout-kart.com" className="text-[#60a5fa] hover:text-[#93c5fd] transition-colors">
-            shivam@clout-kart.com
+          <a href="mailto:inquiry@clout-kart.com" className="text-[#60a5fa] hover:text-[#93c5fd] transition-colors">
+            inquiry@clout-kart.com
           </a>
         </p>
       </div>
