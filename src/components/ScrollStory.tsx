@@ -214,7 +214,7 @@ export default function ScrollStory() {
       </div>
 
       {/* Final statement */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24" style={{ marginTop: '-100vh' }}>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24" style={{ marginTop: '-60vh' }}>
         <div className="text-center glass-card rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/[0.06] relative overflow-hidden" style={{ background: 'rgba(8,12,20,0.88)' }}>
           <div className="absolute inset-0 bg-gradient-to-br from-[#8B2FE0]/5 via-transparent to-[#06B6D4]/5" />
           <div className="relative z-10">
