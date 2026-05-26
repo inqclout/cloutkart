@@ -30,14 +30,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#0a0a0a] border-t border-white/[0.05] [overflow-x:clip]">
+    <footer className="relative bg-[#080808] border-t border-white/[0.05] [overflow-x:clip]">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-6 sm:pb-10">
         {/* Top row */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-10 sm:mb-14">
           {/* Brand col */}
           <div className="sm:col-span-2 lg:col-span-2">
             <img
-              src="/879c983a-71d2-4cb9-b61e-238f9398be59_(1)_(1).png"
+              src="/logo.png"
               alt="CloutKart"
               className="h-10 sm:h-12 w-auto object-contain mb-4 sm:mb-5 opacity-80"
             />

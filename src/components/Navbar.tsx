@@ -24,7 +24,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#0a0a0a]/90 backdrop-blur-2xl border-b border-white/[0.06] shadow-2xl shadow-black/60'
+            ? 'bg-[#080808]/92 backdrop-blur-2xl border-b border-white/[0.06] shadow-2xl shadow-black/70'
             : 'bg-transparent'
         }`}
       >
@@ -33,7 +33,7 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group flex-shrink-0">
               <img
-                src="/879c983a-71d2-4cb9-b61e-238f9398be59_(1)_(1).png"
+                src="/logo.png"
                 alt="CloutKart"
                 className="h-8 sm:h-10 w-auto object-contain"
               />
@@ -99,7 +99,7 @@ export default function Navbar() {
         {/* Header */}
         <div className="flex items-center justify-between px-6 pt-6 pb-4">
           <img
-            src="/879c983a-71d2-4cb9-b61e-238f9398be59_(1)_(1).png"
+            src="/logo.png"
             alt="CloutKart"
             className="h-7 w-auto object-contain"
           />

@@ -67,26 +67,26 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#0a0a0a] [overflow-x:clip]" id="portfolio">
+    <section ref={sectionRef} className="relative py-16 md:py-36 bg-[#0d0d0d] [overflow-x:clip]" id="portfolio">
       <div className="orb w-[600px] h-[600px] -right-32 top-1/4 opacity-[0.04]"
         style={{ background: 'radial-gradient(circle, #ffffff, transparent)' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-16">
-          <div className="reveal inline-block glass border border-white/[0.08] rounded-full px-4 py-1.5 text-xs font-medium text-white/40 mb-6">
+          <div className="reveal inline-flex items-center gap-2 glass border border-white/[0.08] rounded-full px-4 py-1.5 text-[11px] font-medium text-white/35 mb-7 tracking-wide uppercase">
             Our Work
           </div>
-          <h2 className="reveal delay-100 text-2xl sm:text-4xl lg:text-6xl font-black text-white leading-tight mb-3 sm:mb-4">
+          <h2 className="reveal delay-100 text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.06] tracking-tight mb-3 sm:mb-4">
             Creatives That
             <br />
-            <span className="text-white/40">Actually Convert</span>
+            <span className="text-white/35">Actually Convert</span>
           </h2>
-          <p className="reveal delay-200 text-white/35 text-sm sm:text-lg max-w-xl mx-auto">
+          <p className="reveal delay-200 text-white/35 text-sm sm:text-lg max-w-xl mx-auto leading-relaxed">
             A showcase of premium ad creatives, campaign visuals, and performance-focused content.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:auto-rows-[200px]">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3.5 lg:auto-rows-[210px]">
           {portfolioItems.map((item, i) => (
             <div
               key={item.title}
@@ -96,24 +96,25 @@ export default function Portfolio() {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
+              {/* Cinematic overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-60 group-hover:opacity-85 transition-opacity duration-400" />
 
               <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                <div className="glass border border-white/[0.12] rounded-full px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium text-white/60 inline-block w-fit mb-1.5 sm:mb-2">
+                <div className="inline-flex items-center glass border border-white/[0.15] rounded-full px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium text-white/65 w-fit mb-1.5 sm:mb-2">
                   {item.category}
                 </div>
-                <h3 className="text-white font-bold text-xs sm:text-sm lg:text-base leading-tight">{item.title}</h3>
+                <h3 className="text-white font-semibold text-xs sm:text-sm lg:text-[15px] leading-snug">{item.title}</h3>
               </div>
 
-              <div className="absolute top-3 right-3 w-7 h-7 sm:w-8 sm:h-8 glass rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 border border-white/[0.12]">
-                <ExternalLink size={12} className="text-white/70" />
+              <div className="absolute top-3 right-3 w-7 h-7 sm:w-8 sm:h-8 glass rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 border border-white/[0.15]">
+                <ExternalLink size={11} className="text-white/75" />
               </div>
 
-              <div className="absolute inset-0 rounded-xl sm:rounded-2xl border border-transparent group-hover:border-white/15 transition-colors duration-300 pointer-events-none" />
+              <div className="absolute inset-0 rounded-xl sm:rounded-2xl border border-transparent group-hover:border-white/[0.12] transition-colors duration-300 pointer-events-none" />
             </div>
           ))}
         </div>

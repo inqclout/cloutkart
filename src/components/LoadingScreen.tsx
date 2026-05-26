@@ -27,7 +27,7 @@ export default function LoadingScreen() {
     >
       <div className="relative z-10 flex flex-col items-center gap-8">
         <img
-          src="/879c983a-71d2-4cb9-b61e-238f9398be59_(1)_(1).png"
+          src="/logo.png"
           alt="CloutKart"
           className="h-16 w-auto object-contain opacity-90"
         />
