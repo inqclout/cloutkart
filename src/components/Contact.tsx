@@ -93,45 +93,41 @@ export default function Contact() {
     }
   };
 
-  const inputClass = "w-full glass border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/25 focus:outline-none focus:border-[#8B2FE0]/60 focus:ring-1 focus:ring-[#8B2FE0]/30 transition-all duration-200 bg-transparent";
-  const labelClass = "block text-xs font-semibold text-white/50 mb-2 uppercase tracking-wider";
+  const inputClass = "w-full bg-white/[0.04] border border-white/[0.09] rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-white/25 focus:bg-white/[0.06] transition-all duration-200";
+  const labelClass = "block text-xs font-semibold text-white/35 mb-2 uppercase tracking-wider";
 
   return (
-    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#080C14] overflow-hidden" id="contact">
-      <div className="orb w-[700px] h-[700px] left-1/2 -translate-x-1/2 -top-32 opacity-10"
-        style={{ background: 'radial-gradient(circle, #8B2FE0, transparent)' }} />
-      <div className="orb w-[500px] h-[500px] -right-32 bottom-0 opacity-8"
-        style={{ background: 'radial-gradient(circle, #06B6D4, transparent)' }} />
+    <section ref={sectionRef} className="relative py-14 md:py-32 bg-[#0a0a0a] [overflow-x:clip]" id="contact">
+      <div className="orb w-[600px] h-[600px] left-1/2 -translate-x-1/2 -top-32 opacity-[0.04]"
+        style={{ background: 'radial-gradient(circle, #ffffff, transparent)' }} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 md:mb-12">
-          <div className="reveal inline-block glass border border-[#8B2FE0]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#a78bfa] mb-6">
+          <div className="reveal inline-block glass border border-white/[0.08] rounded-full px-4 py-1.5 text-xs font-medium text-white/40 mb-6">
             Get Started
           </div>
           <h2 className="reveal delay-100 text-2xl sm:text-4xl lg:text-6xl font-black text-white leading-tight mb-3 sm:mb-4">
             Let's Build Your
             <br />
-            <span className="text-gradient">Winning Message</span>
+            <span className="text-white/40">Winning Message</span>
           </h2>
-          <p className="reveal delay-200 text-white/40 text-sm md:text-lg max-w-xl mx-auto">
+          <p className="reveal delay-200 text-white/35 text-sm md:text-lg max-w-xl mx-auto">
             Tell us about your brand. We'll reach out within 24 hours to start building.
           </p>
         </div>
 
         <div className="reveal-scale delay-300 relative">
-          <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-[#8B2FE0]/40 via-[#2563EB]/40 to-[#06B6D4]/40 blur-sm" />
+          <div className="absolute -inset-px rounded-3xl bg-white/[0.06] blur-sm" />
 
           <form
             onSubmit={handleSubmit}
-            className="relative glass-card rounded-3xl p-5 sm:p-8 lg:p-12 overflow-hidden"
+            className="relative glass-card rounded-3xl p-5 sm:p-8 lg:p-12 overflow-hidden border border-white/[0.08]"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#8B2FE0]/5 via-transparent to-[#06B6D4]/5 pointer-events-none" />
-
             <div className="relative z-10 grid sm:grid-cols-2 gap-4 sm:gap-5">
               {/* Full Name */}
               <div>
                 <label className={labelClass}>
-                  Full Name <span className="text-[#8B2FE0]">*</span>
+                  Full Name <span className="text-white/50">*</span>
                 </label>
                 <input
                   type="text"
@@ -159,7 +155,7 @@ export default function Contact() {
               {/* Email */}
               <div>
                 <label className={labelClass}>
-                  Email Address <span className="text-[#8B2FE0]">*</span>
+                  Email Address <span className="text-white/50">*</span>
                 </label>
                 <input
                   type="email"
@@ -187,7 +183,7 @@ export default function Contact() {
               {/* Message */}
               <div className="sm:col-span-2">
                 <label className={labelClass}>
-                  Tell Us About Your Brand <span className="text-[#8B2FE0]">*</span>
+                  Tell Us About Your Brand <span className="text-white/50">*</span>
                 </label>
                 <textarea
                   name="message"
@@ -200,37 +196,33 @@ export default function Contact() {
               </div>
 
               {status === 'error' && (
-                <div className="sm:col-span-2 flex items-center gap-3 glass border border-red-500/30 rounded-xl p-4">
-                  <AlertCircle size={16} className="text-red-400 flex-shrink-0" />
-                  <span className="text-red-400 text-sm">{errorMsg}</span>
+                <div className="sm:col-span-2 flex items-center gap-3 glass border border-white/[0.10] rounded-xl p-4">
+                  <AlertCircle size={16} className="text-white/50 flex-shrink-0" />
+                  <span className="text-white/60 text-sm">{errorMsg}</span>
                 </div>
               )}
 
               <div className="sm:col-span-2">
                 {status === 'success' ? (
-                  <div className="flex items-center justify-center gap-3 py-4 glass border border-[#06B6D4]/30 rounded-2xl">
-                    <CheckCircle size={20} className="text-[#06B6D4]" />
+                  <div className="flex items-center justify-center gap-3 py-4 glass border border-white/[0.12] rounded-2xl">
+                    <CheckCircle size={20} className="text-white/60" />
                     <div>
                       <div className="text-white font-semibold text-sm">Message Received!</div>
-                      <div className="text-white/40 text-xs mt-0.5">We'll be in touch within 24 hours.</div>
+                      <div className="text-white/35 text-xs mt-0.5">We'll be in touch within 24 hours.</div>
                     </div>
                   </div>
                 ) : (
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="group w-full relative inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold text-white rounded-2xl overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 active:scale-[0.99] hover:scale-[1.01]"
+                    className="group w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold text-black bg-white rounded-2xl hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 active:scale-[0.99] hover:scale-[1.01]"
                   >
-                    <span className="absolute inset-0 bg-gradient-to-r from-[#8B2FE0] via-[#2563EB] to-[#06B6D4]" />
-                    <span className="absolute inset-0 bg-gradient-to-r from-[#8B2FE0] via-[#2563EB] to-[#06B6D4] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
                     {status === 'loading' ? (
-                      <Loader size={16} className="relative animate-spin" />
+                      <Loader size={16} className="animate-spin" />
                     ) : (
-                      <Send size={16} className="relative group-hover:translate-x-0.5 transition-transform duration-200" />
+                      <Send size={16} className="group-hover:translate-x-0.5 transition-transform duration-200" />
                     )}
-                    <span className="relative">
-                      {status === 'loading' ? 'Sending...' : 'Send Inquiry'}
-                    </span>
+                    {status === 'loading' ? 'Sending...' : 'Send Inquiry'}
                   </button>
                 )}
               </div>
@@ -238,9 +230,9 @@ export default function Contact() {
           </form>
         </div>
 
-        <p className="reveal delay-500 text-center text-white/30 text-sm mt-6">
+        <p className="reveal delay-500 text-center text-white/25 text-sm mt-6">
           Prefer email?{' '}
-          <a href="mailto:inquiry@clout-kart.com" className="text-[#60a5fa] hover:text-[#93c5fd] transition-colors">
+          <a href="mailto:inquiry@clout-kart.com" className="text-white/50 hover:text-white transition-colors">
             inquiry@clout-kart.com
           </a>
         </p>

@@ -22,29 +22,30 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#080C14]"
+      className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
       id="hero"
     >
-      {/* Mouse glow — desktop only */}
+      {/* Mouse glow */}
       <div
         ref={glowRef}
-        className="pointer-events-none absolute w-[600px] h-[600px] rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300 hidden md:block"
+        className="pointer-events-none absolute w-[500px] h-[500px] rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300 hidden md:block"
         style={{
-          background: 'radial-gradient(circle, rgba(139,47,224,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(255,255,255,0.025) 0%, transparent 70%)',
           transform: 'translate(-50%, -50%)',
         }}
       />
 
-      {/* Background orbs */}
-      <div className="orb w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] -top-48 -left-32 sm:-left-64 opacity-20" style={{ background: 'radial-gradient(circle, #8B2FE0, transparent)', animationDelay: '0s' }} />
-      <div className="orb w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] -bottom-32 -right-24 sm:-right-48 opacity-15" style={{ background: 'radial-gradient(circle, #2563EB, transparent)', animationDelay: '3s' }} />
-      <div className="orb w-[200px] sm:w-[400px] h-[200px] sm:h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10" style={{ background: 'radial-gradient(circle, #06B6D4, transparent)', animationDelay: '6s' }} />
+      {/* Background orbs — monochrome */}
+      <div className="orb w-[500px] sm:w-[800px] h-[500px] sm:h-[800px] -top-48 -left-32 sm:-left-64 opacity-[0.06]"
+        style={{ background: 'radial-gradient(circle, #ffffff, transparent)', animationDelay: '0s' }} />
+      <div className="orb w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] -bottom-32 -right-24 sm:-right-48 opacity-[0.04]"
+        style={{ background: 'radial-gradient(circle, #ffffff, transparent)', animationDelay: '4s' }} />
 
-      {/* Grid pattern */}
+      {/* Subtle grid */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.025]"
         style={{
-          backgroundImage: `linear-gradient(rgba(139,47,224,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(139,47,224,0.5) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)`,
           backgroundSize: '80px 80px',
         }}
       />
@@ -54,36 +55,34 @@ export default function Hero() {
           {/* Left: Text content */}
           <div className="text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 glass border border-[#8B2FE0]/30 rounded-full px-4 py-2 text-xs font-semibold text-[#a78bfa] mb-6 sm:mb-8 animate-fade-up">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-pulse" />
+            <div className="inline-flex items-center gap-2 glass border border-white/[0.08] rounded-full px-4 py-2 text-xs font-medium text-white/50 mb-6 sm:mb-8 animate-fade-up">
+              <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse" />
               AI Creatives That Drive Results
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-4 sm:mb-6 animate-fade-up delay-100">
               <span className="text-white">AI-Powered Ads</span>
               <br />
-              <span className="text-gradient">That Actually</span>
+              <span className="text-white/40">That Actually</span>
               <br />
               <span className="text-white">Convert.</span>
             </h1>
 
-            <p className="text-white/50 text-sm sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-10 max-w-xl animate-fade-up delay-200">
+            <p className="text-white/40 text-sm sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-10 max-w-xl animate-fade-up delay-200">
               CloutKart helps brands create high-converting creative using AI, strategic messaging, and direct-response thinking.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up delay-300">
               <a
                 href="#contact"
-                className="group relative inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 text-sm font-semibold text-white rounded-full overflow-hidden touch-manipulation"
+                className="group inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 text-sm font-semibold text-black bg-white rounded-full hover:bg-white/90 transition-colors duration-300 touch-manipulation"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-[#8B2FE0] via-[#2563EB] to-[#06B6D4]" />
-                <span className="absolute inset-0 bg-gradient-to-r from-[#8B2FE0] via-[#2563EB] to-[#06B6D4] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
-                <span className="relative">Contact Us</span>
-                <ArrowRight size={16} className="relative group-hover:translate-x-1 transition-transform duration-200" />
+                Contact Us
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
               </a>
               <a
                 href="#portfolio"
-                className="group inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 text-sm font-semibold text-white/70 hover:text-white rounded-full glass border border-white/10 hover:border-white/20 transition-all duration-300 touch-manipulation"
+                className="group inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 text-sm font-semibold text-white/60 hover:text-white rounded-full border border-white/10 hover:border-white/20 transition-all duration-300 touch-manipulation"
               >
                 <Play size={14} className="group-hover:scale-110 transition-transform" />
                 See Our Work
@@ -98,52 +97,52 @@ export default function Hero() {
                 { value: '48h', label: 'Turnaround Time' },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-black text-gradient mb-1">{stat.value}</div>
-                  <div className="text-[10px] sm:text-xs text-white/40 font-medium leading-tight">{stat.label}</div>
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-1">{stat.value}</div>
+                  <div className="text-[10px] sm:text-xs text-white/35 font-medium leading-tight">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right: Visual composition — desktop only */}
-          <div className="relative h-[600px] hidden lg:block">
-            {/* Central glass card */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 glass-card rounded-3xl p-6 border-gradient animate-float glow-purple">
+          <div className="relative h-[580px] hidden lg:block">
+            {/* Central card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 glass-card rounded-3xl p-6 animate-float border border-white/[0.08]">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8B2FE0] to-[#2563EB] flex items-center justify-center">
-                  <Target size={18} className="text-white" />
+                <div className="w-10 h-10 rounded-xl bg-white/[0.07] border border-white/10 flex items-center justify-center">
+                  <Target size={18} className="text-white/70" />
                 </div>
                 <div>
-                  <div className="text-xs text-white/40">Campaign</div>
+                  <div className="text-xs text-white/30">Campaign</div>
                   <div className="text-sm font-semibold text-white">Winning Message</div>
                 </div>
               </div>
-              <div className="w-full h-32 rounded-xl bg-gradient-to-br from-[#8B2FE0]/20 via-[#2563EB]/20 to-[#06B6D4]/20 mb-4 flex items-center justify-center">
+              <div className="w-full h-28 rounded-xl bg-white/[0.04] border border-white/[0.06] mb-4 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-2xl font-black text-gradient">50% OFF</div>
-                  <div className="text-xs text-white/60 mt-1">Limited Time Offer</div>
+                  <div className="text-2xl font-black text-white">50% OFF</div>
+                  <div className="text-xs text-white/40 mt-1">Limited Time Offer</div>
                 </div>
               </div>
               <div className="flex items-center justify-between text-xs">
-                <span className="text-white/40">CTR</span>
-                <span className="text-[#06B6D4] font-bold">8.4%</span>
+                <span className="text-white/30">CTR</span>
+                <span className="text-white font-bold">8.4%</span>
               </div>
-              <div className="w-full bg-white/10 rounded-full h-1.5 mt-1.5">
-                <div className="bg-gradient-to-r from-[#8B2FE0] to-[#06B6D4] h-1.5 rounded-full w-4/5" />
+              <div className="w-full bg-white/[0.06] rounded-full h-1.5 mt-1.5">
+                <div className="bg-white/50 h-1.5 rounded-full w-4/5" />
               </div>
             </div>
 
             {/* Floating cards */}
-            <div className="absolute top-8 right-8 glass-card rounded-2xl p-4 w-48 animate-float-delayed border border-[#2563EB]/20">
+            <div className="absolute top-8 right-8 glass-card rounded-2xl p-4 w-48 animate-float-delayed border border-white/[0.06]">
               <div className="flex items-center gap-2 mb-2">
-                <Zap size={14} className="text-[#06B6D4]" />
-                <span className="text-xs font-semibold text-white">AI Processing</span>
+                <Zap size={14} className="text-white/50" />
+                <span className="text-xs font-semibold text-white/70">AI Processing</span>
               </div>
               <div className="space-y-1.5">
                 {[80, 60, 90].map((w, i) => (
-                  <div key={i} className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                  <div key={i} className="h-1 bg-white/[0.07] rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-[#8B2FE0] to-[#06B6D4] rounded-full animate-pulse"
+                      className="h-full bg-white/30 rounded-full animate-pulse"
                       style={{ width: `${w}%`, animationDelay: `${i * 0.3}s` }}
                     />
                   </div>
@@ -151,51 +150,50 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="absolute bottom-16 right-0 glass-card rounded-2xl p-4 w-44 animate-float-slow border border-[#06B6D4]/20">
-              <TrendingUp size={16} className="text-[#06B6D4] mb-2" />
+            <div className="absolute bottom-16 right-0 glass-card rounded-2xl p-4 w-44 animate-float-slow border border-white/[0.06]">
+              <TrendingUp size={16} className="text-white/40 mb-2" />
               <div className="text-2xl font-black text-white mb-0.5">+284%</div>
-              <div className="text-xs text-white/40">ROAS increase</div>
+              <div className="text-xs text-white/35">ROAS increase</div>
             </div>
 
-            <div className="absolute top-24 left-0 glass-card rounded-2xl p-4 w-40 animate-float border border-[#8B2FE0]/20">
-              <div className="text-xs text-white/40 mb-1">Formats</div>
+            <div className="absolute top-24 left-0 glass-card rounded-2xl p-4 w-40 animate-float border border-white/[0.06]">
+              <div className="text-xs text-white/35 mb-1">Formats</div>
               <div className="space-y-1">
                 {['Image Ad', 'TikTok', 'Landing Page'].map((f) => (
-                  <div key={f} className="text-xs font-medium text-white/70 flex items-center gap-1.5">
-                    <span className="w-1 h-1 rounded-full bg-gradient-to-r from-[#8B2FE0] to-[#06B6D4]" />
+                  <div key={f} className="text-xs font-medium text-white/55 flex items-center gap-1.5">
+                    <span className="w-1 h-1 rounded-full bg-white/40" />
                     {f}
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="absolute bottom-4 left-8 glass-card rounded-2xl p-3 w-52 animate-float-delayed border border-[#8B2FE0]/20">
-              <div className="text-xs text-white/40 mb-2">Message Performance</div>
+            <div className="absolute bottom-4 left-8 glass-card rounded-2xl p-3 w-52 animate-float-delayed border border-white/[0.06]">
+              <div className="text-xs text-white/35 mb-2">Message Performance</div>
               <div className="flex items-end gap-1 h-10">
                 {[4, 6, 5, 8, 7, 10, 9].map((h, i) => (
                   <div
                     key={i}
-                    className="flex-1 rounded-sm bg-gradient-to-t from-[#8B2FE0] to-[#06B6D4]"
-                    style={{ height: `${h * 10}%`, opacity: 0.6 + i * 0.05 }}
+                    className="flex-1 rounded-sm bg-white/20"
+                    style={{ height: `${h * 10}%`, opacity: 0.3 + i * 0.08 }}
                   />
                 ))}
               </div>
             </div>
 
-            {/* Decorative glows */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-[#8B2FE0]/10 blur-3xl pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-[#2563EB]/5 blur-3xl pointer-events-none" />
+            {/* Subtle glow behind central card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-white/[0.03] blur-3xl pointer-events-none" />
           </div>
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#080C14] to-transparent pointer-events-none" />
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
 
       {/* Scroll indicator */}
       <div className="absolute bottom-2 left-0 right-0 flex flex-col items-center gap-2 animate-bounce">
-        <div className="text-xs text-white/30 font-medium tracking-widest uppercase">Scroll</div>
-        <div className="w-px h-8 bg-gradient-to-b from-white/30 to-transparent" />
+        <div className="text-[10px] text-white/20 font-medium tracking-widest uppercase">Scroll</div>
+        <div className="w-px h-6 bg-gradient-to-b from-white/20 to-transparent" />
       </div>
     </section>
   );

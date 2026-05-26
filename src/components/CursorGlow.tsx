@@ -21,59 +21,54 @@ export default function CursorGlow() {
     const a = auraRef.current;
     if (!d || !r || !a) return;
 
-    // Reset
     d.style.transform = `translate(-50%, -50%) scale(${clicking ? 0.6 : 1})`;
 
     if (state === 'button') {
-      r.style.width = '52px';
-      r.style.height = '52px';
-      r.style.borderColor = 'rgba(139,47,224,0.9)';
-      r.style.boxShadow = '0 0 20px rgba(139,47,224,0.5), 0 0 40px rgba(37,99,235,0.2)';
-      r.style.background = 'rgba(139,47,224,0.06)';
-      d.style.background = 'radial-gradient(circle, #c084fc, #a78bfa)';
-      d.style.boxShadow = '0 0 10px rgba(139,47,224,0.8)';
-      a.style.opacity = '0.6';
-      a.style.transform = 'translate(-50%, -50%) scale(1.4)';
+      r.style.width = '48px';
+      r.style.height = '48px';
+      r.style.borderColor = 'rgba(255,255,255,0.5)';
+      r.style.boxShadow = 'none';
+      r.style.background = 'rgba(255,255,255,0.04)';
+      d.style.background = '#ffffff';
+      d.style.boxShadow = '0 0 8px rgba(255,255,255,0.4)';
+      a.style.opacity = '0.4';
+      a.style.transform = 'translate(-50%, -50%) scale(1.3)';
     } else if (state === 'card') {
-      r.style.width = '64px';
-      r.style.height = '64px';
-      r.style.borderColor = 'rgba(6,182,212,0.6)';
-      r.style.boxShadow = '0 0 24px rgba(6,182,212,0.3), 0 0 48px rgba(37,99,235,0.15)';
-      r.style.background = 'rgba(6,182,212,0.04)';
-      d.style.background = 'radial-gradient(circle, #67e8f9, #38bdf8)';
-      d.style.boxShadow = '0 0 10px rgba(6,182,212,0.8)';
-      a.style.opacity = '0.5';
-      a.style.transform = 'translate(-50%, -50%) scale(1.6)';
+      r.style.width = '56px';
+      r.style.height = '56px';
+      r.style.borderColor = 'rgba(255,255,255,0.3)';
+      r.style.boxShadow = 'none';
+      r.style.background = 'rgba(255,255,255,0.02)';
+      d.style.background = '#ffffff';
+      d.style.boxShadow = '0 0 6px rgba(255,255,255,0.3)';
+      a.style.opacity = '0.3';
+      a.style.transform = 'translate(-50%, -50%) scale(1.5)';
     } else if (state === 'text') {
       r.style.width = '2px';
-      r.style.height = '28px';
+      r.style.height = '24px';
       r.style.borderRadius = '1px';
-      r.style.borderColor = 'rgba(255,255,255,0.7)';
+      r.style.borderColor = 'rgba(255,255,255,0.6)';
       r.style.boxShadow = 'none';
-      r.style.background = 'rgba(255,255,255,0.7)';
+      r.style.background = 'rgba(255,255,255,0.6)';
       d.style.opacity = '0';
       a.style.opacity = '0';
       a.style.transform = 'translate(-50%, -50%) scale(0)';
     } else {
-      // default / hover
-      r.style.width = state === 'hover' ? '44px' : '36px';
-      r.style.height = state === 'hover' ? '44px' : '36px';
+      r.style.width = state === 'hover' ? '40px' : '32px';
+      r.style.height = state === 'hover' ? '40px' : '32px';
       r.style.borderRadius = '50%';
-      r.style.borderColor = state === 'hover' ? 'rgba(99,179,237,0.7)' : 'rgba(139,47,224,0.5)';
-      r.style.boxShadow = state === 'hover'
-        ? '0 0 16px rgba(37,99,235,0.4), 0 0 32px rgba(6,182,212,0.15)'
-        : '0 0 12px rgba(139,47,224,0.3)';
+      r.style.borderColor = state === 'hover' ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.3)';
+      r.style.boxShadow = 'none';
       r.style.background = 'transparent';
       d.style.opacity = '1';
-      d.style.background = 'radial-gradient(circle, #e879f9, #818cf8, #38bdf8)';
-      d.style.boxShadow = '0 0 8px rgba(139,47,224,0.6), 0 0 16px rgba(37,99,235,0.3)';
-      a.style.opacity = state === 'hover' ? '0.35' : '0.2';
+      d.style.background = '#ffffff';
+      d.style.boxShadow = '0 0 5px rgba(255,255,255,0.4)';
+      a.style.opacity = state === 'hover' ? '0.25' : '0.15';
       a.style.transform = `translate(-50%, -50%) scale(${state === 'hover' ? 1.1 : 1})`;
     }
   }, []);
 
   useEffect(() => {
-    // Desktop only
     if (window.matchMedia('(pointer: coarse)').matches) return;
 
     document.body.style.cursor = 'none';
@@ -152,12 +147,10 @@ export default function CursorGlow() {
       if (state !== cursorState.current) {
         cursorState.current = state;
         applyState(state, isClicking.current);
-        // Restore border-radius if was in text mode
         if (state !== 'text' && ringRef.current) {
           ringRef.current.style.borderRadius = '50%';
         }
       }
-      // Hide default cursor on interactive elements too
       (target as HTMLElement).style?.setProperty && (target as HTMLElement).style.setProperty('cursor', 'none', 'important');
     };
 
@@ -178,32 +171,13 @@ export default function CursorGlow() {
     };
   }, [applyState]);
 
-  // Don't render on touch devices
   if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) return null;
 
   return (
     <>
-      {/* Aura — large soft ambient glow */}
-      <div
-        ref={auraRef}
-        className="cursor-aura"
-        style={{ opacity: 0 }}
-        aria-hidden
-      />
-      {/* Ring — outer trailing circle */}
-      <div
-        ref={ringRef}
-        className="cursor-ring"
-        style={{ opacity: 0 }}
-        aria-hidden
-      />
-      {/* Dot — fast-following inner point */}
-      <div
-        ref={dotRef}
-        className="cursor-dot"
-        style={{ opacity: 0 }}
-        aria-hidden
-      />
+      <div ref={auraRef} className="cursor-aura" style={{ opacity: 0 }} aria-hidden />
+      <div ref={ringRef} className="cursor-ring" style={{ opacity: 0 }} aria-hidden />
+      <div ref={dotRef} className="cursor-dot" style={{ opacity: 0 }} aria-hidden />
     </>
   );
 }

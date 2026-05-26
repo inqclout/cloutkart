@@ -30,22 +30,18 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#080C14] border-t border-white/[0.05] overflow-hidden">
-      <div className="orb w-[600px] h-[600px] left-1/2 -translate-x-1/2 -bottom-64 opacity-8"
-        style={{ background: 'radial-gradient(circle, #8B2FE0, transparent)' }} />
-
+    <footer className="relative bg-[#0a0a0a] border-t border-white/[0.05] [overflow-x:clip]">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-6 sm:pb-10">
         {/* Top row */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-10 sm:mb-14">
           {/* Brand col */}
           <div className="sm:col-span-2 lg:col-span-2">
             <img
-              src="/IMG_4598_(2)_(1).png"
+              src="/879c983a-71d2-4cb9-b61e-238f9398be59_(1)_(1).png"
               alt="CloutKart"
-              className="h-10 sm:h-12 w-auto object-contain mb-4 sm:mb-5"
-              style={{ filter: 'drop-shadow(0 0 8px rgba(139,47,224,0.4))' }}
+              className="h-10 sm:h-12 w-auto object-contain mb-4 sm:mb-5 opacity-80"
             />
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-5 sm:mb-6">
+            <p className="text-white/30 text-sm leading-relaxed max-w-xs mb-5 sm:mb-6">
               Modern advertising for modern brands. We build the winning message first — everything else scales from there.
             </p>
             <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
@@ -54,7 +50,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-9 h-9 glass border border-white/10 rounded-lg flex items-center justify-center text-white/40 hover:text-white hover:border-[#8B2FE0]/40 transition-all duration-200 group touch-manipulation"
+                  className="w-9 h-9 glass border border-white/[0.08] rounded-lg flex items-center justify-center text-white/30 hover:text-white hover:border-white/20 transition-all duration-200 group touch-manipulation"
                 >
                   <s.icon size={15} className="group-hover:scale-110 transition-transform" />
                 </a>
@@ -66,13 +62,13 @@ export default function Footer() {
           <div className="grid grid-cols-3 sm:grid-cols-3 lg:contents gap-8">
             {Object.entries(links).map(([group, items]) => (
               <div key={group}>
-                <h4 className="text-xs font-bold text-white/30 uppercase tracking-widest mb-4 sm:mb-5">{group}</h4>
+                <h4 className="text-[10px] font-bold text-white/20 uppercase tracking-widest mb-4 sm:mb-5">{group}</h4>
                 <ul className="space-y-2.5 sm:space-y-3">
                   {items.map((item) => (
                     <li key={item.label}>
                       <a
                         href={item.href}
-                        className="text-xs sm:text-sm text-white/50 hover:text-white transition-colors duration-200 flex items-center gap-1 group"
+                        className="text-xs sm:text-sm text-white/35 hover:text-white/80 transition-colors duration-200 flex items-center gap-1 group"
                       >
                         <span className="break-all">{item.label}</span>
                         {item.href.startsWith('mailto') && (
@@ -87,13 +83,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6 sm:mb-8" />
+        <div className="w-full h-px bg-white/[0.06] mb-6 sm:mb-8" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-          <p className="text-white/25 text-xs">
+          <p className="text-white/20 text-xs">
             © {new Date().getFullYear()} CloutKart. All rights reserved.
           </p>
-          <p className="text-white/25 text-xs">
+          <p className="text-white/20 text-xs">
             AI Creatives That Drive Results
           </p>
         </div>

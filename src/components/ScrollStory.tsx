@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Sparkles, Cpu, ShoppingCart, Rocket, MessageSquare } from 'lucide-react';
+import { Sparkles, Cpu, ShoppingCart, Rocket } from 'lucide-react';
 
 const phases = [
   {
@@ -7,32 +7,24 @@ const phases = [
     phase: '01',
     title: 'The Idea Emerges',
     desc: 'Abstract concepts crystallize into clear, powerful messaging. Brand DNA analyzed. Market decoded.',
-    color: 'from-[#8B2FE0] to-[#6D28D9]',
-    accent: '#8B2FE0',
   },
   {
     icon: Cpu,
     phase: '02',
     title: 'The Creative Lab',
     desc: 'AI processes, refines, and optimizes. Multiple variations tested. The winning angle surfaces.',
-    color: 'from-[#2563EB] to-[#1E40AF]',
-    accent: '#2563EB',
   },
   {
     icon: ShoppingCart,
     phase: '03',
     title: 'The Cart Moment',
     desc: 'The winning message locks in. Production-ready. Polished. Primed for maximum impact.',
-    color: 'from-[#0891B2] to-[#0E7490]',
-    accent: '#0891B2',
   },
   {
     icon: Rocket,
     phase: '04',
     title: 'Launch & Scale',
     desc: 'One message. Infinite formats. Instagram, TikTok, video, landing pages — all from the same foundation.',
-    color: 'from-[#06B6D4] to-[#0891B2]',
-    accent: '#06B6D4',
   },
 ];
 
@@ -63,7 +55,6 @@ export default function ScrollStory() {
       const pct = Math.max(0, Math.min(1, scrolled / scrollable));
       setProgress(pct);
 
-      // 80% of scroll for the 4 phases, last 20% for final statement
       if (pct < 0.80) {
         setShowFinal(false);
         const phasePct = pct / 0.80;
@@ -81,12 +72,10 @@ export default function ScrollStory() {
   const activeP = phases[activePhase];
 
   return (
-    <section id="story" className="relative bg-[#080C14]">
+    <section id="story" className="relative bg-[#0a0a0a]">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="orb w-[600px] h-[600px] -left-64 top-1/3 opacity-10"
-          style={{ background: 'radial-gradient(circle, #2563EB, transparent)' }} />
-        <div className="orb w-[500px] h-[500px] -right-48 bottom-1/3 opacity-8"
-          style={{ background: 'radial-gradient(circle, #06B6D4, transparent)' }} />
+        <div className="orb w-[600px] h-[600px] -left-64 top-1/3 opacity-[0.04]"
+          style={{ background: 'radial-gradient(circle, #ffffff, transparent)' }} />
       </div>
 
       <div ref={outerRef} className="h-[140vh]">
@@ -97,15 +86,15 @@ export default function ScrollStory() {
             style={{ opacity: showFinal ? 0 : 1, transform: showFinal ? 'scale(0.95) translateY(-20px)' : 'scale(1) translateY(0)', position: showFinal ? 'absolute' : 'relative', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
           >
             <div className={`text-center mb-5 md:mb-8 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="inline-block glass border border-[#2563EB]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#60a5fa] mb-3 md:mb-4">
+              <div className="inline-block glass border border-white/[0.08] rounded-full px-4 py-1.5 text-xs font-medium text-white/40 mb-3 md:mb-4">
                 The CloutKart Story
               </div>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
                 Watch Creativity
                 <br />
-                <span className="text-gradient">Come to Life</span>
+                <span className="text-white/40">Come to Life</span>
               </h2>
-              <p className="text-white/40 text-xs sm:text-sm mt-2 sm:mt-3">Scroll to walk through the journey.</p>
+              <p className="text-white/30 text-xs sm:text-sm mt-2 sm:mt-3">Scroll to walk through the journey.</p>
             </div>
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -114,38 +103,36 @@ export default function ScrollStory() {
                 {phases.map((phase, i) => (
                   <div
                     key={phase.phase}
-                    className="relative rounded-2xl p-0.5 transition-all duration-500"
+                    className="relative rounded-2xl transition-all duration-500"
                     style={{
-                      background: i === activePhase
-                        ? `linear-gradient(135deg, ${phase.accent}80, ${phase.accent}20)`
-                        : 'transparent',
                       transform: i === activePhase ? 'scale(1.04)' : 'scale(1)',
                     }}
                   >
                     <div
                       className="glass-card rounded-xl p-4 lg:p-5 h-full transition-all duration-500"
                       style={{
-                        borderColor: i <= activePhase ? phase.accent : 'rgba(255,255,255,0.06)',
+                        borderColor: i <= activePhase ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.06)',
                         borderWidth: '1px',
                         borderStyle: 'solid',
+                        background: i === activePhase ? 'rgba(255,255,255,0.06)' : undefined,
                       }}
                     >
                       <div
-                        className={`w-9 h-9 lg:w-10 lg:h-10 rounded-xl bg-gradient-to-br ${phase.color} flex items-center justify-center mb-3 transition-all duration-500`}
+                        className="w-9 h-9 lg:w-10 lg:h-10 rounded-xl bg-white/[0.07] border border-white/[0.09] flex items-center justify-center mb-3 transition-all duration-500"
                         style={{ opacity: i <= activePhase ? 1 : 0.3 }}
                       >
-                        <phase.icon size={16} className="text-white" />
+                        <phase.icon size={16} className="text-white/60" />
                       </div>
-                      <div className="text-xs font-bold text-white/30 mb-1">PHASE {phase.phase}</div>
+                      <div className="text-xs font-bold text-white/25 mb-1">PHASE {phase.phase}</div>
                       <h3
                         className="text-xs lg:text-sm font-bold mb-1.5 transition-colors duration-500"
-                        style={{ color: i === activePhase ? '#fff' : 'rgba(255,255,255,0.4)' }}
+                        style={{ color: i === activePhase ? '#ffffff' : 'rgba(255,255,255,0.3)' }}
                       >
                         {phase.title}
                       </h3>
                       <p
                         className="text-xs leading-relaxed transition-colors duration-500"
-                        style={{ color: i === activePhase ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.2)' }}
+                        style={{ color: i === activePhase ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.15)' }}
                       >
                         {phase.desc}
                       </p>
@@ -156,25 +143,17 @@ export default function ScrollStory() {
 
               {/* Mobile: big active card + dots */}
               <div className="md:hidden mb-4">
-                <div
-                  className="relative rounded-2xl p-0.5 mb-3 transition-all duration-500"
-                  style={{ background: `linear-gradient(135deg, ${activeP.accent}80, ${activeP.accent}20)` }}
-                >
-                  <div
-                    className="glass-card rounded-xl p-5"
-                    style={{ borderColor: activeP.accent, borderWidth: '1px', borderStyle: 'solid' }}
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${activeP.color} flex items-center justify-center`}>
-                        <activeP.icon size={20} className="text-white" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-white/30">PHASE {activeP.phase}</div>
-                        <h3 className="text-base font-bold text-white">{activeP.title}</h3>
-                      </div>
+                <div className="glass-card rounded-xl p-5 mb-3 border border-white/[0.12]">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-11 h-11 rounded-xl bg-white/[0.07] border border-white/[0.09] flex items-center justify-center">
+                      <activeP.icon size={20} className="text-white/60" />
                     </div>
-                    <p className="text-sm text-white/60 leading-relaxed">{activeP.desc}</p>
+                    <div>
+                      <div className="text-xs font-bold text-white/25">PHASE {activeP.phase}</div>
+                      <h3 className="text-base font-bold text-white">{activeP.title}</h3>
+                    </div>
                   </div>
+                  <p className="text-sm text-white/45 leading-relaxed">{activeP.desc}</p>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   {phases.map((_, i) => (
@@ -182,9 +161,9 @@ export default function ScrollStory() {
                       key={i}
                       className="rounded-full transition-all duration-500"
                       style={{
-                        width: i === activePhase ? '24px' : '6px',
-                        height: '6px',
-                        background: i <= activePhase ? phases[i].accent : 'rgba(255,255,255,0.15)',
+                        width: i === activePhase ? '20px' : '5px',
+                        height: '5px',
+                        background: i <= activePhase ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.15)',
                       }}
                     />
                   ))}
@@ -192,47 +171,34 @@ export default function ScrollStory() {
               </div>
 
               {/* Progress bar */}
-              <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+              <div className="w-full h-px bg-white/[0.08] rounded-full overflow-hidden">
                 <div
-                  className="h-full rounded-full transition-all duration-150"
-                  style={{
-                    width: `${Math.min(progress / 0.65, 1) * 100}%`,
-                    background: 'linear-gradient(90deg, #8B2FE0, #2563EB, #06B6D4)',
-                    boxShadow: '0 0 8px rgba(139,47,224,0.6)',
-                  }}
+                  className="h-full rounded-full transition-all duration-150 bg-white/50"
+                  style={{ width: `${Math.min(progress / 0.65, 1) * 100}%` }}
                 />
               </div>
-              <div className="flex justify-between mt-2 text-xs font-black">
-                <span className="text-white/40">Start</span>
-                <span
-                  className="tracking-widest uppercase"
-                  style={{
-                    color: '#fff',
-                    textShadow: '0 0 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,1)',
-                  }}
-                >
-                  Phase {activeP.phase} / 04
-                </span>
-                <span className="text-white/40">Launch</span>
+              <div className="flex justify-between mt-2 text-xs font-bold">
+                <span className="text-white/30">Start</span>
+                <span className="text-white/60">Phase {activeP.phase} / 04</span>
+                <span className="text-white/30">Launch</span>
               </div>
             </div>
           </div>
 
-          {/* Final statement - compact, inside sticky */}
+          {/* Final statement */}
           <div
             className="absolute inset-0 flex items-center justify-center px-4 transition-all duration-600"
             style={{ opacity: showFinal ? 1 : 0, transform: showFinal ? 'scale(1) translateY(0)' : 'scale(0.9) translateY(30px)', pointerEvents: showFinal ? 'auto' : 'none' }}
           >
-            <div className="text-center glass-card rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/[0.06] relative overflow-hidden max-w-3xl w-full" style={{ background: 'rgba(8,12,20,0.88)' }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB]/5 via-transparent to-[#06B6D4]/5" />
+            <div className="text-center glass-card rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/[0.08] relative overflow-hidden max-w-3xl w-full">
               <div className="relative z-10">
                 <p className="text-lg sm:text-2xl lg:text-4xl font-black text-white mb-1 sm:mb-2 leading-tight">
                   "IT'S NOT ABOUT THE AD."
                 </p>
-                <p className="text-lg sm:text-2xl lg:text-4xl font-black text-gradient mb-3 sm:mb-5 leading-tight">
+                <p className="text-lg sm:text-2xl lg:text-4xl font-black text-white/40 mb-3 sm:mb-5 leading-tight">
                   "IT'S ABOUT THE MESSAGE."
                 </p>
-                <p className="text-white/50 text-xs sm:text-base max-w-md mx-auto">
+                <p className="text-white/35 text-xs sm:text-base max-w-md mx-auto">
                   CloutKart builds the message first. Everything else scales from there.
                 </p>
               </div>
