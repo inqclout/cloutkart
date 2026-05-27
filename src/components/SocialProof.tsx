@@ -39,7 +39,7 @@ export default function SocialProof() {
 
   return (
     <section ref={sectionRef} className="relative py-16 md:py-36 bg-transparent [overflow-x:clip]" id="results">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center mb-10 md:mb-16">
           <div className="section-reveal eyebrow-pill mb-7">Results</div>
           <h2 className="section-reveal text-3xl sm:text-5xl lg:text-[52px] font-bold text-white leading-[1.06] tracking-[-0.02em] mb-3 sm:mb-4 font-heading">
@@ -49,7 +49,8 @@ export default function SocialProof() {
           </h2>
         </div>
 
-        <div className="section-reveal card-grid mb-10 md:mb-16">
+        {/* Stats row */}
+        <div className="section-reveal grid grid-cols-3 gap-4 sm:gap-6 mb-10 md:mb-16">
           {[
             { value: '500+', label: 'Brands Scaled' },
             { value: '$50M+', label: 'Ad Spend Managed' },
@@ -64,8 +65,9 @@ export default function SocialProof() {
           ))}
         </div>
 
-        <div className="card-grid">
-          {testimonials.map((t) => (
+        {/* Testimonials */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+          {testimonials.map((t, i) => (
             <div key={t.name} className="section-reveal glass-card p-6 sm:p-8">
               <div className="relative z-10">
                 <div className="flex items-center gap-1 mb-4">

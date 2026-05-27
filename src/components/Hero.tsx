@@ -20,14 +20,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen grid items-center justify-center overflow-hidden bg-transparent" id="hero">
-      {/* Dot grid overlay */}
-      <div className="hero-grid-overlay" />
-
-      <div className="relative z-10 w-full pt-24 sm:pt-32 pb-16 sm:pb-24 px-6 md:px-8 lg:px-10">
-        <div className="section-grid max-w-7xl mx-auto">
-          <div className="grid-cols-1 lg:col-span-6 col-span-12 grid content-center text-center lg:text-left">
-            <div className="section-reveal eyebrow-pill mb-6 sm:mb-8 justify-self-center lg:justify-self-start">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent" id="hero">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-24 sm:pt-32 pb-16 sm:pb-24 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="text-center lg:text-left">
+            <div className="section-reveal eyebrow-pill mb-6 sm:mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-purple animate-pulse" />
               AI Creative Agency
             </div>
@@ -44,11 +41,11 @@ export default function Hero() {
               We build the winning message first — then transform it into creatives that actually perform.
             </p>
 
-            <div className="section-reveal grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 justify-items-center lg:justify-items-start max-w-sm mx-auto lg:mx-0 sm:max-w-none">
-              <a href="#contact" className="btn-primary w-full sm:w-auto">
+            <div className="section-reveal flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+              <a href="#contact" className="btn-primary">
                 Get Started <ArrowRight size={15} />
               </a>
-              <a href="#portfolio" className="btn-secondary w-full sm:w-auto">
+              <a href="#portfolio" className="btn-secondary">
                 <Play size={14} /> View Our Work
               </a>
             </div>
@@ -67,7 +64,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hidden lg:grid lg:col-span-6 col-span-12 relative h-[520px] items-center justify-center">
+          <div className="relative h-[520px] hidden lg:flex items-center justify-center">
             <div className="glass-card w-[320px] p-6" style={{ animation: 'floatY 5s ease-in-out infinite' }}>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-4">

@@ -69,7 +69,7 @@ export default function Pricing() {
 
   return (
     <section ref={sectionRef} className="relative py-16 md:py-36 bg-transparent [overflow-x:clip]" id="pricing">
-      <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center mb-10 md:mb-14">
           <div className="section-reveal eyebrow-pill mb-7">Pricing</div>
           <h2 className="section-reveal text-3xl sm:text-5xl lg:text-[52px] font-bold text-white leading-[1.06] tracking-[-0.02em] mb-3 sm:mb-4 font-heading">
@@ -82,13 +82,13 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="card-grid">
-          {plans.map((plan) => (
+        <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
+          {plans.map((plan, i) => (
             <div key={plan.name} className={`section-reveal ${plan.popular ? 'gradient-border' : ''}`}>
-              <div className={`glass-card p-7 sm:p-9 h-full grid grid-rows-[auto_1fr_auto] ${plan.popular ? '!border-0' : ''}`}
+              <div className={`glass-card p-7 sm:p-9 h-full flex flex-col ${plan.popular ? '!border-0' : ''}`}
                 style={plan.popular ? { background: 'rgba(255,255,255,0.06)' } : undefined}
               >
-                <div className="relative z-10">
+                <div className="relative z-10 flex-1 flex flex-col">
                   {plan.popular && (
                     <div className="eyebrow-pill mb-5 w-fit">Most Popular</div>
                   )}
@@ -100,20 +100,18 @@ export default function Pricing() {
                     <span className="text-[#9CA3AF] text-sm ml-1">{plan.period}</span>
                   </div>
                   <p className="text-[#9CA3AF] text-sm mb-6">{plan.desc}</p>
-                </div>
 
-                <div className="relative z-10 grid gap-3 content-start mb-8">
-                  {plan.features.map((feature) => (
-                    <div key={feature} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-gradient-to-r from-brand-purple to-brand-cyan flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check size={10} className="text-white" />
+                  <div className="space-y-3 mb-8 flex-1">
+                    {plan.features.map((feature) => (
+                      <div key={feature} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-gradient-to-r from-brand-purple to-brand-cyan flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check size={10} className="text-white" />
+                        </div>
+                        <span className="text-[#D1D5DB] text-sm leading-relaxed">{feature}</span>
                       </div>
-                      <span className="text-[#D1D5DB] text-sm leading-relaxed">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
-                <div className="relative z-10">
                   <a
                     href="#contact"
                     className={plan.popular ? 'btn-primary w-full text-center' : 'btn-secondary w-full text-center'}

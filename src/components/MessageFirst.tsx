@@ -27,7 +27,7 @@ export default function MessageFirst() {
 
   return (
     <section ref={sectionRef} className="relative py-16 md:py-36 bg-transparent [overflow-x:clip]" id="message">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center mb-12 md:mb-24">
           <div className="section-reveal eyebrow-pill mb-8">The Philosophy</div>
           <div className="section-reveal space-y-1 sm:space-y-2">
@@ -58,8 +58,8 @@ export default function MessageFirst() {
           </div>
         </div>
 
-        <div className="card-grid">
-          {pillars.map((pillar) => (
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+          {pillars.map((pillar, i) => (
             <div key={pillar.title} className="section-reveal glass-card p-6 sm:p-8 group">
               <div className="relative z-10">
                 <div className="w-11 h-11 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center mb-5">

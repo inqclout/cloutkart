@@ -30,7 +30,7 @@ export default function Process() {
 
   return (
     <section ref={sectionRef} className="relative py-10 md:py-24 bg-transparent [overflow-x:clip]" id="process">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center mb-8 md:mb-14">
           <div className="section-reveal eyebrow-pill mb-7">How We Work</div>
           <h2 className="section-reveal text-3xl sm:text-5xl lg:text-[52px] font-bold text-white leading-[1.06] tracking-[-0.02em] mb-3 sm:mb-4 font-heading">
@@ -45,7 +45,7 @@ export default function Process() {
 
         <div className="relative">
           <div className="hidden lg:block absolute top-[48px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-          <div className="card-grid">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             {steps.map((step) => (
               <div key={step.num} className="section-reveal glass-card p-4 sm:p-7 group">
                 <div className="relative z-10">
