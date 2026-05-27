@@ -52,7 +52,7 @@ export default function ScrollStory() {
 
   return (
     <section id="story" className="relative bg-transparent">
-      <div ref={outerRef} className="h-[300vh]">
+      <div ref={outerRef} className="h-[200vh]">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div
             className="transition-all duration-700"
