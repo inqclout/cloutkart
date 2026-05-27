@@ -29,7 +29,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-10 md:py-24 bg-transparent [overflow-x:clip]" id="process">
+    <section ref={sectionRef} className="relative py-10 md:py-24 bg-transparent [overflow-x:clip] -mt-[50vh]" id="process">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center mb-8 md:mb-14">
           <div className="section-reveal eyebrow-pill mb-7">How We Work</div>
