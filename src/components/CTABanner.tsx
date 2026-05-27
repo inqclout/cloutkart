@@ -21,7 +21,7 @@ export default function CTABanner() {
 
   return (
     <section ref={sectionRef} className="relative py-16 md:py-24 bg-transparent [overflow-x:clip]">
-      <div className="max-w-5xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div className="max-w-5xl mx-auto px-6 md:px-8 lg:px-10">
         <div className="section-reveal gradient-border">
           <div className="glass-card p-8 sm:p-12 lg:p-16 !border-0 !bg-[rgba(12,12,12,0.6)] text-center">
             <div className="absolute inset-0 pointer-events-none rounded-[20px]" />

@@ -30,7 +30,7 @@ export default function Services() {
 
   return (
     <section ref={sectionRef} className="relative py-12 md:py-24 bg-transparent [overflow-x:clip]" id="services">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10">
         <div className="text-center mb-10 md:mb-16">
           <div className="section-reveal eyebrow-pill mb-7">What We Create</div>
           <h2 className="section-reveal text-3xl sm:text-5xl lg:text-[52px] font-bold text-white leading-[1.06] tracking-[-0.02em] mb-3 sm:mb-4 font-heading">
@@ -43,7 +43,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+        <div className="card-grid">
           {services.map((service) => (
             <div key={service.title} className="section-reveal glass-card p-5 sm:p-6 group">
               <div className="relative z-10">

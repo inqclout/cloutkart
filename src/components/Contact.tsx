@@ -96,7 +96,7 @@ export default function Contact() {
 
   return (
     <section ref={sectionRef} className="relative py-16 md:py-36 bg-transparent [overflow-x:clip]" id="contact">
-      <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div className="max-w-3xl mx-auto px-6 md:px-8 lg:px-10">
         <div className="text-center mb-10 md:mb-14">
           <div className="section-reveal eyebrow-pill mb-7">Get Started</div>
           <h2 className="section-reveal text-3xl sm:text-5xl lg:text-[52px] font-bold text-white leading-[1.06] tracking-[-0.02em] mb-3 sm:mb-4 font-heading">

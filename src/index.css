@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   CSS GRID LAYOUT SYSTEM
+   ============================================ */
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -11,7 +15,7 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 68px;
+    scroll-padding-top: 60px;
   }
 
   body {
@@ -65,6 +69,241 @@
     background: #353535;
   }
 }
+
+/* ============================================
+   SITE GRID LAYOUT
+   Uses grid-template-areas for semantic placement.
+   Desktop: fixed 240px sidebar + main content
+   Tablet: top nav + content
+   Mobile: single column, sidebar off-canvas
+   ============================================ */
+
+@layer components {
+  /* Top-level page grid */
+  .site-layout {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 60px 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    background-color: #080808;
+  }
+
+  @media (min-width: 1024px) {
+    .site-layout {
+      grid-template-columns: 240px 1fr;
+      grid-template-rows: 60px 1fr auto;
+      grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+    }
+  }
+
+  /* Header area */
+  .site-header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: 60px;
+  }
+
+  .site-nav {
+    width: 100%;
+    height: 60px;
+    display: grid;
+    align-items: center;
+    transition: all 0.5s;
+  }
+
+  .site-nav-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 0 24px;
+    height: 100%;
+  }
+
+  .site-nav-inner > :nth-child(2) {
+    justify-self: center;
+  }
+
+  .site-nav-inner > :nth-child(3) {
+    justify-self: end;
+  }
+
+  /* Sidebar */
+  .site-sidebar {
+    grid-area: sidebar;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    z-index: 100;
+    background: rgba(8, 8, 8, 0.95);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .site-sidebar.open {
+    transform: translateX(0);
+  }
+
+  @media (min-width: 1024px) {
+    .site-sidebar {
+      transform: translateX(0);
+      position: fixed;
+    }
+  }
+
+  .site-sidebar-inner {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .site-sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .site-sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .site-sidebar-overlay {
+      display: none !important;
+    }
+  }
+
+  .site-sidebar-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9CA3AF;
+    transition: all 0.2s;
+  }
+
+  .site-sidebar-close:hover {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Main content area */
+  .site-main {
+    grid-area: main;
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  /* 12-column content grid inside main */
+  .main-content-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 12px;
+    row-gap: 0;
+  }
+
+  .main-content-grid > * {
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: 768px) {
+    .main-content-grid {
+      gap: 24px;
+      row-gap: 0;
+    }
+  }
+
+  /* Section-level 12-col grids */
+  .section-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 767px) {
+    .section-grid {
+      gap: 12px;
+    }
+  }
+
+  .section-grid-full {
+    grid-column: 1 / -1;
+  }
+
+  .section-grid-8 {
+    grid-column: span 8;
+  }
+
+  .section-grid-6 {
+    grid-column: span 6;
+  }
+
+  .section-grid-4 {
+    grid-column: span 4;
+  }
+
+  @media (max-width: 767px) {
+    .section-grid-8,
+    .section-grid-6,
+    .section-grid-4 {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* Auto-fit card grid for repeating blocks */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  @media (max-width: 767px) {
+    .card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+  }
+
+  /* Footer area */
+  .site-footer {
+    grid-area: footer;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES (preserved from original)
+   ============================================ */
 
 @layer utilities {
   .gradient-text {
@@ -249,6 +488,19 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Hero dot grid overlay */
+  .hero-grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+      radial-gradient(circle, rgba(168, 85, 247, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
   }
 }
 
