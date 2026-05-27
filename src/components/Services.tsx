@@ -1,17 +1,13 @@
 import { useEffect, useRef } from 'react';
-import { Image as ImageIcon, Video, Smartphone, Film, Package, TrendingUp, Users, Palette, MessageSquare, FlaskConical } from 'lucide-react';
+import { Image as ImageIcon, Video, Smartphone, Users, Mail, LayoutGrid as Layout } from 'lucide-react';
 
 const services = [
-  { icon: ImageIcon, title: 'AI Image Ads', desc: 'Scroll-stopping static visuals engineered for conversion.' },
-  { icon: Smartphone, title: 'Instagram & TikTok', desc: 'Platform-native content that drives engagement and sales.' },
-  { icon: Package, title: 'Product Ads', desc: 'Premium product showcases that make buyers act.' },
-  { icon: Video, title: 'Short-form Video', desc: 'Fast, punchy, conversion-focused video content.' },
-  { icon: Film, title: 'Concept Packs', desc: 'Full creative direction with multiple angles and formats.' },
-  { icon: TrendingUp, title: 'Performance Creative', desc: 'Direct-response assets built for measurable ROI.' },
-  { icon: Users, title: 'UGC-style Concepts', desc: 'Authentic-feeling content that converts like organic.' },
-  { icon: Palette, title: 'Campaign Visuals', desc: 'Cohesive campaign systems that build brand equity.' },
-  { icon: MessageSquare, title: 'Messaging Strategy', desc: 'The foundational docs that power every format.' },
-  { icon: FlaskConical, title: 'Testing Packages', desc: 'Rapid iteration frameworks to find what converts.' },
+  { icon: ImageIcon, title: 'Static Ads', desc: 'Scroll-stopping static visuals engineered for conversion.' },
+  { icon: Video, title: 'Video Ads', desc: 'Fast, punchy, conversion-focused video content.' },
+  { icon: Users, title: 'UGC Style', desc: 'Authentic-feeling content that converts like organic.' },
+  { icon: Smartphone, title: 'Story Format', desc: 'Platform-native content for Instagram and TikTok.' },
+  { icon: Mail, title: 'Email Creatives', desc: 'High-converting email visuals and copy.' },
+  { icon: Layout, title: 'Landing Pages', desc: 'Performance-driven landing page creative.' },
 ];
 
 export default function Services() {
@@ -19,14 +15,12 @@ export default function Services() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal, .reveal-scale').forEach((el, i) => {
-              setTimeout(() => el.classList.add('visible'), i * 70);
-            });
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sectionRef.current?.querySelectorAll('.section-reveal').forEach((el, i) => {
+            setTimeout(() => el.classList.add('visible'), i * 100);
+          });
+        }
       },
       { threshold: 0.05 }
     );
@@ -35,39 +29,30 @@ export default function Services() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-12 md:py-20 bg-[#0d0d0d] [overflow-x:clip]" id="services">
-      <div className="orb w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-0 opacity-[0.035]"
-        style={{ background: 'radial-gradient(circle, #ffffff, transparent)' }} />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="relative py-12 md:py-24 bg-transparent [overflow-x:clip]" id="services">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center mb-10 md:mb-16">
-          <div className="reveal inline-flex items-center gap-2 glass border border-white/[0.08] rounded-full px-4 py-1.5 text-[11px] font-medium text-white/35 mb-7 tracking-wide uppercase">
-            What We Create
-          </div>
-          <h2 className="reveal delay-100 text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.06] tracking-tight mb-3 sm:mb-4">
+          <div className="section-reveal eyebrow-pill mb-7">What We Create</div>
+          <h2 className="section-reveal text-3xl sm:text-5xl lg:text-[52px] font-bold text-white leading-[1.06] tracking-[-0.02em] mb-3 sm:mb-4 font-heading">
             Every Format.
             <br />
-            <span className="text-white/35">One Winning Message.</span>
+            <span className="gradient-text">One Winning Message.</span>
           </h2>
-          <p className="reveal delay-200 text-white/35 text-sm sm:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="section-reveal text-[#D1D5DB] text-sm sm:text-lg max-w-xl mx-auto leading-relaxed">
             We translate your core message into every format that converts — across every platform that matters.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-3.5">
-          {services.map((service, i) => (
-            <div
-              key={service.title}
-              className={`reveal-scale delay-${Math.min((i + 1) * 70, 800)} rounded-2xl p-4 sm:p-5 group hover-lift relative overflow-hidden cursor-default border border-white/[0.07]`}
-              data-cursor="card"
-              style={{ background: '#111111' }}
-            >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/[0.02] rounded-2xl" />
-              <div className="relative z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/[0.05] border border-white/[0.08] flex items-center justify-center mb-3 sm:mb-3.5 transition-transform duration-300 group-hover:scale-110">
-                <service.icon size={17} className="text-white/48" />
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+          {services.map((service) => (
+            <div key={service.title} className="section-reveal glass-card p-5 sm:p-6 group">
+              <div className="relative z-10">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+                  <service.icon size={18} className="text-brand-purple" />
+                </div>
+                <h3 className="text-sm sm:text-[18px] font-semibold text-white mb-2 leading-snug font-heading">{service.title}</h3>
+                <p className="text-[#D1D5DB] text-xs sm:text-sm leading-relaxed">{service.desc}</p>
               </div>
-              <h3 className="relative z-10 text-xs sm:text-[13px] font-semibold text-white mb-1.5 leading-snug">{service.title}</h3>
-              <p className="relative z-10 text-[11px] text-white/30 leading-relaxed hidden sm:block">{service.desc}</p>
             </div>
           ))}
         </div>

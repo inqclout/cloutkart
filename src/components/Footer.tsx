@@ -5,7 +5,7 @@ export default function Footer() {
     Agency: [
       { label: 'About', href: '#about' },
       { label: 'Services', href: '#services' },
-      { label: 'How We Work', href: '#process' },
+      { label: 'Process', href: '#process' },
       { label: 'Portfolio', href: '#portfolio' },
     ],
     Services: [
@@ -30,18 +30,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#080808] border-t border-white/[0.05] [overflow-x:clip]">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-6 sm:pb-10">
-        {/* Top row */}
+    <footer className="relative bg-transparent border-t border-white/[0.06] [overflow-x:clip]">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-10 sm:pt-16 pb-6 sm:pb-10">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-10 sm:mb-14">
-          {/* Brand col */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <img
-              src="/logo.png"
-              alt="CloutKart"
-              className="h-10 sm:h-12 w-auto object-contain mb-4 sm:mb-5 opacity-80"
-            />
-            <p className="text-white/30 text-sm leading-relaxed max-w-xs mb-5 sm:mb-6">
+            <img src="/logo.png" alt="CloutKart" className="h-10 sm:h-12 w-auto object-contain mb-4 sm:mb-5 opacity-80" />
+            <p className="text-[#9CA3AF] text-sm leading-relaxed max-w-xs mb-5 sm:mb-6">
               Modern advertising for modern brands. We build the winning message first — everything else scales from there.
             </p>
             <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
@@ -50,7 +44,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-9 h-9 glass border border-white/[0.08] rounded-lg flex items-center justify-center text-white/30 hover:text-white hover:border-white/20 transition-all duration-200 group touch-manipulation"
+                  className="w-9 h-9 bg-white/[0.04] border border-white/[0.08] rounded-lg flex items-center justify-center text-[#9CA3AF] hover:text-white hover:border-brand-purple/30 transition-all duration-200 group touch-manipulation"
                 >
                   <s.icon size={15} className="group-hover:scale-110 transition-transform" />
                 </a>
@@ -58,17 +52,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
           <div className="grid grid-cols-3 sm:grid-cols-3 lg:contents gap-8">
             {Object.entries(links).map(([group, items]) => (
               <div key={group}>
-                <h4 className="text-[10px] font-bold text-white/20 uppercase tracking-widest mb-4 sm:mb-5">{group}</h4>
+                <h4 className="text-[10px] font-bold text-[#6B7280] uppercase tracking-widest mb-4 sm:mb-5 font-heading">{group}</h4>
                 <ul className="space-y-2.5 sm:space-y-3">
                   {items.map((item) => (
                     <li key={item.label}>
                       <a
                         href={item.href}
-                        className="text-xs sm:text-sm text-white/35 hover:text-white/80 transition-colors duration-200 flex items-center gap-1 group"
+                        className="text-xs sm:text-sm text-[#9CA3AF] hover:text-white transition-colors duration-200 flex items-center gap-1 group"
                       >
                         <span className="break-all">{item.label}</span>
                         {item.href.startsWith('mailto') && (
@@ -83,13 +76,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="w-full h-px bg-white/[0.06] mb-6 sm:mb-8" />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mb-6 sm:mb-8" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-          <p className="text-white/20 text-xs">
-            © {new Date().getFullYear()} CloutKart. All rights reserved.
+          <p className="text-[#6B7280] text-xs">
+            &copy; {new Date().getFullYear()} CloutKart. All rights reserved.
           </p>
-          <p className="text-white/20 text-xs">
+          <p className="text-[#6B7280] text-xs font-heading">
             AI Creatives That Drive Results
           </p>
         </div>
