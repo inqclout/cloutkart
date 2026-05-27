@@ -51,8 +51,8 @@ export default function ScrollStory() {
   const activeP = phases[activePhase];
 
   return (
-    <section id="story" className="relative bg-transparent">
-      <div ref={outerRef} className="h-[140vh]">
+    <section id="story" className="relative bg-transparent -my-16 md:-my-24">
+      <div ref={outerRef} className="h-[100vh]">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div
             className="transition-all duration-700"

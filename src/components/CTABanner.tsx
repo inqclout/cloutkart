@@ -23,8 +23,8 @@ export default function CTABanner() {
     <section ref={sectionRef} className="relative py-16 md:py-24 bg-transparent [overflow-x:clip]">
       <div className="max-w-5xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="section-reveal gradient-border">
-          <div className="glass-card p-8 sm:p-12 lg:p-16 !border-0 text-center" style={{ background: 'rgba(255,255,255,0.04)' }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/[0.08] via-transparent to-brand-cyan/[0.08] pointer-events-none rounded-[20px]" />
+          <div className="glass-card p-8 sm:p-12 lg:p-16 !border-0 !bg-[rgba(12,12,12,0.6)] text-center">
+            <div className="absolute inset-0 pointer-events-none rounded-[20px]" />
             <div className="relative z-10">
               <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-bold text-white leading-[1.06] tracking-[-0.02em] mb-3 sm:mb-4 font-heading">
                 Ready to Build Ads That

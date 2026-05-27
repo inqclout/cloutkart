@@ -74,15 +74,16 @@ export default function FAQ() {
                 />
               </button>
               <div
-                className="relative z-10 overflow-hidden transition-all duration-300"
+                className="relative z-10 grid overflow-hidden transition-all duration-300"
                 style={{
-                  maxHeight: openIndex === i ? '200px' : '0',
-                  opacity: openIndex === i ? 1 : 0,
+                  gridTemplateRows: openIndex === i ? '1fr' : '0fr',
                 }}
               >
-                <p className="text-[#D1D5DB] text-sm sm:text-base leading-relaxed px-5 sm:px-6 pb-5 sm:pb-6">
-                  {faq.a}
-                </p>
+                <div className="overflow-hidden">
+                  <p className="text-[#D1D5DB] text-sm sm:text-base leading-relaxed px-5 sm:px-6 pb-5 sm:pb-6">
+                    {faq.a}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

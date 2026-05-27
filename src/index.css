@@ -16,20 +16,23 @@
 
   body {
     background-color: #080808;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
     color: #D1D5DB;
     font-family: 'DM Sans', system-ui, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
   }
 
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, transparent 40%, #080808 100%);
+    background: none;
     pointer-events: none;
     z-index: 0;
   }
@@ -81,15 +84,15 @@
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(12, 12, 12, 0.6);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.04) inset,
-      0 8px 32px rgba(0, 0, 0, 0.45),
-      0 1px 0 rgba(255, 255, 255, 0.10) inset;
+      0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 1px 0 rgba(255, 255, 255, 0.08) inset;
     position: relative;
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -200,15 +203,17 @@
   .gradient-border {
     position: relative;
     border-radius: 20px;
+    background: rgba(12, 12, 12, 0.6) !important;
+    border: 2px solid transparent !important;
+    background-image:
+      linear-gradient(rgba(12, 12, 12, 0.6), rgba(12, 12, 12, 0.6)),
+      linear-gradient(135deg, #A855F7, #3B82F6, #06B6D4) !important;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
   }
 
   .gradient-border::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: 21px;
-    background: linear-gradient(135deg, #A855F7, #3B82F6, #06B6D4);
-    z-index: -1;
+    display: none;
   }
 
   .section-divider {

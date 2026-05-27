@@ -5,7 +5,6 @@ import About from './components/About';
 import Services from './components/Services';
 import ScrollStory from './components/ScrollStory';
 import Process from './components/Process';
-import SocialProof from './components/SocialProof';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import Portfolio from './components/Portfolio';
@@ -28,8 +27,6 @@ export default function App() {
         <ScrollStory />
         <div className="section-divider" />
         <Process />
-        <div className="section-divider" />
-        <SocialProof />
         <div className="section-divider" />
         <Pricing />
         <div className="section-divider" />
