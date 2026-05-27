@@ -61,25 +61,35 @@ export default function FAQ() {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className={`section-reveal glass-card overflow-hidden transition-all duration-300 ${openIndex === i ? '!border-brand-purple/30' : ''}`}
+              className="section-reveal"
+              style={{
+                background: 'rgba(12, 12, 12, 0.6)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: `1px solid ${openIndex === i ? 'rgba(168,85,247,0.3)' : 'rgba(255,255,255,0.08)'}`,
+                borderRadius: '20px',
+                transition: 'border-color 0.3s ease',
+              }}
             >
               <button
-                className="relative z-10 w-full flex items-center justify-between p-5 sm:p-6 text-left touch-manipulation"
+                className="w-full flex items-center justify-between p-5 sm:p-6 text-left touch-manipulation"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
                 <span className="text-white text-sm sm:text-[17px] font-medium pr-4 font-heading">{faq.q}</span>
                 <ChevronDown
                   size={18}
-                  className={`text-brand-purple flex-shrink-0 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}
+                  className="text-brand-purple flex-shrink-0 transition-transform duration-300"
+                  style={{ transform: openIndex === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
                 />
               </button>
               <div
-                className="relative z-10 grid overflow-hidden transition-all duration-300"
                 style={{
+                  display: 'grid',
                   gridTemplateRows: openIndex === i ? '1fr' : '0fr',
+                  transition: 'grid-template-rows 0.3s ease',
                 }}
               >
-                <div className="overflow-hidden">
+                <div style={{ overflow: 'hidden' }}>
                   <p className="text-[#D1D5DB] text-sm sm:text-base leading-relaxed px-5 sm:px-6 pb-5 sm:pb-6">
                     {faq.a}
                   </p>
